@@ -8,24 +8,40 @@ const {User} = require("../model/index");
 
 //SECTION: Handle Routes
 
-// Index GET / - Presentational
-router.get("/")
+// Index GET /users - Presentational
+router.get("/", (req, res, next) => {
+    res.send("Index user route");
+}); 
 
-// New GET /posts - Presentational form
+// New GET /users/new - Presentational form
+router.get("/new", (req, res, next) => {
+    res.send("make a new user?");
+});
 
-// Create POST /posts - Functional
+// Create POST /users - Functional
+router.post("/", (req, res, next) => {
+    res.send("Made a new user");
+});
 
-// Show GET /posts/:id - Presentational
+// Show GET /users/:id - Presentational
+router.get("/:id", (req, res, next) => {
+    res.send("made a new user");
+});
 
-// Edit GET /posts/:id/edit - Presentational form
+// Edit GET /users/:id/edit - Presentational form
+router.get("/:id/edit", (req, res, next) => {
+    res.send("editing an existing user?")
+});
 
-// Update PUT /posts/:id - Functional
+// Update PUT /users/:id - Functional
 
-// Destroy DELETE /posts/:id - Functional
-
+// Destroy DELETE /users/:id - Functional
 
 
 // 404 page - Presentational
+router.get("/*", (req, res, next) => {
+    res.send("Error 404: cannot find page");
+});
 
 
 //export router

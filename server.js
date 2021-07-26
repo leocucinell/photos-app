@@ -17,6 +17,10 @@ const PORT = 4000;
 app.use(express.urlencoded({extended: true}));
 
 /* SECTION: Routes */
+app.get("/", (req, res, next) => {
+    res.redirect("/users")
+});
+app.use("/users", controllers.user);
 
 
 /* SECTION: Server bind */
