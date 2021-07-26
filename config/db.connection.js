@@ -14,7 +14,7 @@ mongoose.connect(connectionStr, {
 
 //test the connection
 mongoose.connection.on("connected", () => {
-    console.log(`Mongoose connected to ${connectionString}`)
+    console.log(`Mongoose connected to ${connectionStr}`)
 });
 
 mongoose.connection.on("error", (err) => {
