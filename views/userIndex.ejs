@@ -1,5 +1,9 @@
 <%- include("./partials/_header.ejs") %>
 <body>
-    <h1>Hello Index</h1>
+    <!-- Loop through the users and print out their names -->
+    <% for(let x = 0; x < users.length; x++){ %>
+        <% let user = users[x] %>
+        <h1><%= user.userName %></h1>
+    <% } %>
 </body>
 </html>

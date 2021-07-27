@@ -16,7 +16,10 @@ router.get("/", (req, res, next) => {
             return next();
         }
         //now have access to the data stored inside mongodb
-        res.render("userIndex.ejs")
+        context = {
+            users: foundUsers
+        }
+        res.render("userIndex.ejs", context)
     });
 }); 
 
