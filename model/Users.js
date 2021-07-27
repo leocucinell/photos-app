@@ -11,7 +11,7 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: [true, "add a password"]
     },
-    Avatar: {
+    avatar: {
         type: String,
     }
 }, {timestamps: true})

@@ -11,6 +11,7 @@ const app = express();
 
 /* SECTION: Server configuration */
 const PORT = 4000;
+app.set("view engine", "ejs");
 
 
 /* SECTION: Middleware */

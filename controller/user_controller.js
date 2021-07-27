@@ -4,13 +4,20 @@ const express = require("express");
 const router = express.Router();
 
 //require neessary db connection
-const {User} = require("../model/index");
+const { User } = require("../model/index");
 
 //SECTION: Handle Routes
 
 // Index GET /users - Presentational
 router.get("/", (req, res, next) => {
-    res.send("Index user route");
+    User.find({}, (error, foundUsers) => {
+        if(error){
+            console.log(error);
+            return next();
+        }
+        //now have access to the data stored inside mongodb
+        res.render("userIndex.ejs")
+    });
 }); 
 
 // New GET /users/new - Presentational form
